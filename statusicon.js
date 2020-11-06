@@ -1,4 +1,5 @@
 import { css, html, LitElement } from 'lit-element/lit-element.js';
+import { icons } from './icons.js';
 
 class Statusicon extends LitElement {
 
@@ -32,6 +33,8 @@ class Statusicon extends LitElement {
 
 	render() {
 		console.log(this.state);
+		this.image = icons["alert"];
+		console.log(this.image);
 		if (this.state == 0) {
 			this.message = this.failureMessage;
 		} else if (this.state == 1) {
@@ -41,7 +44,8 @@ class Statusicon extends LitElement {
 		}
 		return html`
 			<h2>Hello ${this.prop1}!</h2>
-			<div class="frs">
+			<div class="sis">
+				${this.image}
 				${this.message}
 			</div>
 		`;
