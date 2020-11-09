@@ -1,4 +1,5 @@
-import { css, html, LitElement } from 'lit-element/lit-element.js';
+import { css, html, LitElement, svg } from 'lit-element/lit-element.js';
+import { unsafeSVG } from 'lit-html/directives/unsafe-svg';
 import { icons } from './icons.js';
 
 class Statusicon extends LitElement {
@@ -32,22 +33,24 @@ class Statusicon extends LitElement {
 	}
 
 	render() {
-		console.log(this.state);
-		this.image = icons["alert"];
-		console.log(this.image);
 		if (this.state == 0) {
+			this.image = icons["failure"];
 			this.message = this.failureMessage;
+			this.textColour = 'rgb(205, 32, 38)'; //cinnabar
 		} else if (this.state == 1) {
+			this.image = icons["success"];
 			this.message = this.successMessage;
+			this.textColour = '#46a661'; //olivine
 		} else {
+			this.image = icons["warning"];
 			this.message = this.warningMessage;
+			this.textColour = 'rgb(255, 186, 89)'; //citrine
 		}
+
+
 		return html`
-			<h2>Hello ${this.prop1}!</h2>
-			<div class="sis">
-				${this.image}
-				${this.message}
-			</div>
+				${unsafeSVG(this.image)}
+				<span style="color: ${this.textColour}">${this.message} </span>
 		`;
 	}
 }
