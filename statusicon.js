@@ -46,11 +46,14 @@ class Statusicon extends LitElement {
 			this.message = this.warningMessage;
 			this.textColour = 'rgb(255, 186, 89)'; //citrine
 		}
+		console.log(this.image);
 
 
 		return html`
+			<div>
 				${unsafeSVG(this.image)}
-				<span style="color: ${this.textColour}">${this.message} </span>
+				<span style="color: ${this.textColour}; margin:0, 0.4em; vertical-align: middle">${this.message} </span>
+			</div>
 		`;
 	}
 }
