@@ -2,7 +2,7 @@ import { css, html, LitElement, svg } from 'lit-element/lit-element.js';
 import { unsafeSVG } from 'lit-html/directives/unsafe-svg';
 import { icons } from './icons.js';
 
-class Statusicon extends LitElement {
+class StatusIcon extends LitElement {
 
 	static get properties() {
 		return {
@@ -57,4 +57,4 @@ class Statusicon extends LitElement {
 		`;
 	}
 }
-customElements.define('d2l-labs-statusicon', Statusicon);
+customElements.define('d2l-labs-status-icon', StatusIcon);

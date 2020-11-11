@@ -1,12 +1,12 @@
 {
-  "name": "@brightspace-ui-labs/statusicon",
+  "name": "@brightspace-ui-labs/status-icon",
   "description": "Displays an icon as well as optional text to show the state/status of some feature or tool",
-  "repository": "https://github.com/BrightspaceUILabs/statusicon.git",
+  "repository": "https://github.com/BrightspaceUILabs/status-icon.git",
   "private": true,
   "scripts": {
     "lint": "npm run lint:eslint && npm run lint:lit",
     "lint:eslint": "eslint . --ext .js,.html",
-    "lint:lit": "lit-analyzer statusicon.js demo test",
+    "lint:lit": "lit-analyzer status-icon.js demo test",
     "start": "es-dev-server --app-index demo/index.html --node-resolve --dedupe --open --watch",
     "test": "npm run lint && npm run test:headless && npm run test:diff",
     "test:diff": "mocha ./**/*.visual-diff.js -t 40000",

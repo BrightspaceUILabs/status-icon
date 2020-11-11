@@ -1,8 +1,7 @@
-# d2l-labs-statusicon
+# d2l-labs-status-icon
 
-[![NPM version](https://img.shields.io/npm/v/@brightspace-ui-labs/statusicon.svg)](https://www.npmjs.org/package/@brightspace-ui-labs/statusicon)
-[![Dependabot badge](https://flat.badgen.net/dependabot/BrightspaceUILabs/statusicon?icon=dependabot)](https://app.dependabot.com/)
-[![Build status](https://travis-ci.com/@brightspace-ui-labs/statusicon.svg?branch=master)](https://travis-ci.com/@brightspace-ui-labs/statusicon)
+[![NPM version](https://img.shields.io/npm/v/@brightspace-ui-labs/status-icon.svg)](https://www.npmjs.org/package/@brightspace-ui-labs/status-icon)
+[![Build status](https://travis-ci.com/@brightspace-ui-labs/status-icon.svg?branch=master)](https://travis-ci.com/@brightspace-ui-labs/status-icon)
 
 > Note: this is a ["labs" component](https://github.com/BrightspaceUI/guide/wiki/Component-Tiers). While functional, these tasks are prerequisites to promotion to BrightspaceUI "official" status:
 >
@@ -25,16 +24,16 @@ Displays an icon as well as optional text to show the state/status of some featu
 To install from NPM:
 
 ```shell
-npm install @brightspace-ui-labs/statusicon
+npm install @brightspace-ui-labs/status-icon
 ```
 
 ## Usage
 
 ```html
 <script type="module">
-    import '@brightspace-ui-labs/statusicon/statusicon.js';
+    import '@brightspace-ui-labs/status-icon/status-icon.js';
 </script>
-<d2l-labs-statusicon id="test0" state="0" warningMessage="Warning" successMessage="Success" failureMessage="Failure"></d2l-labs-statusicon>
+<d2l-labs-status-icon id="test0" state="0" warningMessage="Warning" successMessage="Success" failureMessage="Failure"></d2l-labs-status-icon>
 ```
 ![Status Icons preview](./StatusIconPreview.PNG)
 
@@ -49,7 +48,7 @@ npm install @brightspace-ui-labs/statusicon
 
 **Accessibility:**
 
-To make your usage of `d2l-labs-statusicon` accessible, use the following properties when applicable:
+To make your usage of `d2l-labs-status-icon` accessible, use the following properties when applicable:
 
 | Attribute | Description |
 |--|--|

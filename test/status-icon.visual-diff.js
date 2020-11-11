@@ -1,9 +1,9 @@
 const puppeteer = require('puppeteer');
 const VisualDiff = require('@brightspace-ui/visual-diff');
 
-describe('d2l-labs-statusicon', () => {
+describe('d2l-labs-status-icon', () => {
 
-	const visualDiff = new VisualDiff('statusicon', __dirname);
+	const visualDiff = new VisualDiff('status-icon', __dirname);
 
 	let browser, page;
 
@@ -11,7 +11,7 @@ describe('d2l-labs-statusicon', () => {
 		browser = await puppeteer.launch();
 		page = await visualDiff.createPage(browser);
 		await page.setViewport({width: 800, height: 800, deviceScaleFactor: 2});
-		await page.goto(`${visualDiff.getBaseUrl()}/test/statusicon.visual-diff.html`, {waitUntil: ['networkidle0', 'load']});
+		await page.goto(`${visualDiff.getBaseUrl()}/test/status-icon.visual-diff.html`, {waitUntil: ['networkidle0', 'load']});
 		await page.bringToFront();
 	});
 
