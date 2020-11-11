@@ -1,58 +1,71 @@
+import '@brightspace-ui/core/components/colors/colors.js';
+import '@brightspace-ui/core/components/icons/icon.js';
 import { css, html, LitElement } from 'lit-element/lit-element.js';
-import { icons } from './icons.js';
-import { unsafeSVG } from 'lit-html/directives/unsafe-svg';
+import { RtlMixin } from '@brightspace-ui/core/mixins/rtl-mixin.js';
 
-class StatusIcon extends LitElement {
+function getIcon(state) {
+	switch (state) {
+		case 'success':
+			return 'tier1:check-circle';
+		case 'warning':
+			return 'tier1:alert';
+		default:
+			return 'tier1:close-circle';
+	}
+}
+
+class StatusIcon extends RtlMixin(LitElement) {
 
 	static get properties() {
 		return {
-			prop1: { type: String },
-			state: { type: Number, attribute: 'state' },
-			successMessage: { type: String, attribute: 'successmessage' },
-			failureMessage: { type: String, attribute: 'failuremessage' },
-			warningMessage: { type: String, attribute: 'warningmessage' }
-
+			state: { type: String, reflect: true },
+			message: { type: String, reflect: true }
 		};
 	}
 
 	static get styles() {
 		return css`
 			:host {
-				display: inline-block;
+				align-items: center;
+				display: inline-flex;
 			}
 			:host([hidden]) {
 				display: none;
+			}
+			:host,
+			d2l-icon {
+				color: var(--d2l-color-cinnabar);
+			}
+			:host([state="warning"]),
+			:host([state="warning"]) d2l-icon {
+				color: var(--d2l-color-citrine);
+			}
+			:host([state="success"]),
+			:host([state="success"]) d2l-icon {
+				color: var(--d2l-color-olivine);
+			}
+			span {
+				margin-left: 0.4em;
+			}
+			:host([dir="rtl"]) span {
+				margin-left: 0;
+				margin-right: 0.4em;
 			}
 		`;
 	}
 
 	constructor() {
 		super();
-		this.prop1 = 'statusicon';
-
+		this.state = 'failure';
 	}
 
 	render() {
-		if (this.state === 0) {
-			this.image = icons['failure'];
-			this.message = this.failureMessage;
-			this.textColour = 'rgb(205, 32, 38)'; //cinnabar
-		} else if (this.state === 1) {
-			this.image = icons['success'];
-			this.message = this.successMessage;
-			this.textColour = '#46a661'; //olivine
-		} else {
-			this.image = icons['warning'];
-			this.message = this.warningMessage;
-			this.textColour = 'rgb(255, 186, 89)'; //citrine
-		}
-
+		const icon = getIcon(this.state);
 		return html`
-			<div>
-				${unsafeSVG(this.image)}
-				<span style="color: ${this.textColour}; margin:0, 0.4em; vertical-align: middle">${this.message} </span>
-			</div>
+			<d2l-icon icon="${icon}"></d2l-icon>
+			<span>${this.message} </span>
 		`;
 	}
+
 }
 customElements.define('d2l-labs-status-icon', StatusIcon);

@@ -23,7 +23,7 @@ describe('d2l-labs-status-icon', () => {
 
 	['failure', 'warning', 'success'].forEach((state) => {
 		it(state, async function() {
-			const rect = await visualDiff.getRect(page, `#${state}`);
+			const rect = await visualDiff.getRect(page, `d2l-labs-status-icon[state="${state}"]`);
 			await visualDiff.screenshotAndCompare(page, this.test.fullTitle(), { clip: rect });
 		});
 	});
