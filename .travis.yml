@@ -32,12 +32,12 @@ jobs:
   - stage: deploy
     script: skip
     env:
-      # NPM_TOKEN d137......19e4
-      - secure: MXcLjLZ14gz+8X3lScSybeKKZMdJ+IiIDz9P3BDcYhYkG5IwaJ/SySGbPFVVsrY518z7XKSLc7V4qBK6SHfIRcXQHd+0MVjOnJNSRdZF92KOCzc6Esb2NUUnoUX2Hbv/MKCaa+GyDqnH2gjAl1+ZwMMUs91lHZyxIdMa6Ro1TnKhk++m1uxC/w4sQ4ncInMcTVB5oZkxFnNzXJj4K33F9jG2bBT+bqVV8bvt6Ax9KCIVjllgfY9wXAu16e789NS77ytcV9fEoWkyA5RKwD08HImuGLSSNDA8cgXt3rzCwRtTSqeHr01uUAEk0lnXxwLUje3aDRxkifgUi3D94YV8CqzkHYCVb3zlaEnvHUEy57tKOhXbN/yCbiutCFd6I547L6i7H9baE/XmzSiNrKBmSctnhecaiYCoS0hKyHsthKqJS/1NJHwU/6hhwEua7nux2A81tr14xqXa/HDHyW2OY8mSz7JZu03IJfK6ddkMD57ycoAvjyXvlO8CCF75PT8Z29A+mKNhNUwinlj7WxUyp6v+dPDpjDcgasb4TydbhKPiy26CjKey2vLpd5CDbF7DigoPpYyzG3M212YZa7jG7gtaYyOGR9wqyRYP6vcADupKGsg/gPwzLjYBjsxls70E4lvYq6aI7tR8iM4Sj7SY8HvchGYC9yc5IxhXm8o2+Mk=
+      # NPM_TOKEN b71b......29e1
+      - secure: aKTGvHGZoU20CKAASNfMWmEkRrn/vpwBrXU77t2e/bbCxAL2ko9lOoD0sybPPUyS07zOv16X31YUn9zXtGH4LvPo/zyfJ/hg7GJGKwt/7L1AADcH4fcGcvC4LCrFh7l9uwnj4TMujMDAVzhq6JnlPvwqCBkYFwlerahDJ2HYmwGBRvgh8bAxlBg/Yn/p+xoEspWEKSoooOaMLpvnHZyIgfyGB3FEFFNM8RkDgZh39WcSrfuJUF/po2T5bAIcLsrnxseuf5eesogdhgn8NJS5+0ILyh/SZaR1rzRByYWO2hn+wlCayuj9/g2XwwpKBTMMtMbMKzYsVbprzuWxc6gpFoY/ejmSy7eeFpWqroCNopEC977TIl11/36/ArUdXk+os6DcL8dvTruUUnyFLUoaabmJLlkc2aC4zgKozBfu/3+2Gpb5SPdetvru32xP9cyQPHj4Y9sAoD/L48wT0vXZGHLV3kjG2tFyF4HicoI+RzFujIHgg/eOe63PitH4lZJVDZNI8l+pJbLe0sVDaDZvWVysC9f3+VhWUKva5h2vRLZDuAxKQosM3S+shXFECCAT6NL9bE6tX4J4MXehWnSDC3MozF/t1QC20eLD8uM1p0Y5ECI3EpsURkZoAlUIKkiv4CzvKRQp0h1VTWWr/x4c2s/Oe7OKPiB2Zg+9cCbUE8Y=
     deploy:
-        provider: script
-        skip_cleanup: true
-        script: npx semantic-release
+      provider: script
+      skip_cleanup: true
+      script: npx semantic-release
 env:
   global:
     # GITHUB_TOKEN
