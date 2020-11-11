@@ -21,9 +21,11 @@ describe('d2l-labs-status-icon', () => {
 
 	after(async() => await browser.close());
 
-	it('passes visual-diff comparison', async function() {
-		const rect = await visualDiff.getRect(page, '#default');
-		await visualDiff.screenshotAndCompare(page, this.test.fullTitle(), { clip: rect });
+	['failure', 'warning', 'success'].forEach((state) => {
+		it(state, async function() {
+			const rect = await visualDiff.getRect(page, `#${state}`);
+			await visualDiff.screenshotAndCompare(page, this.test.fullTitle(), { clip: rect });
+		});
 	});
 
 });

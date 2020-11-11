@@ -10,10 +10,27 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<meta charset="UTF-8">
+		<style>
+			html {
+				font-size: 20px;
+			}
+			body {
+				padding: 30px;
+			}
+			.visual-diff {
+				margin-bottom: 30px;
+			}
+		</style>
 	</head>
 	<body class="d2l-typography">
 		<div class="visual-diff">
-			<d2l-labs-status-icon id="default"></d2l-labs-status-icon>
+			<d2l-labs-status-icon id="failure" state="0" failuremessage="Failure"></d2l-labs-status-icon>
+		</div>
+		<div class="visual-diff">
+			<d2l-labs-status-icon id="warning" state="2" warningmessage="Warning"></d2l-labs-status-icon>
+		</div>
+		<div class="visual-diff">
+			<d2l-labs-status-icon id="success" state="1" successmessage="Success"></d2l-labs-status-icon>
 		</div>
 	</body>
 </html>
