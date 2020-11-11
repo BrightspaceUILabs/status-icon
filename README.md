@@ -1,8 +1,7 @@
-# d2l-labs-statusicon
+# d2l-labs-status-icon
 
-[![NPM version](https://img.shields.io/npm/v/@brightspace-ui-labs/statusicon.svg)](https://www.npmjs.org/package/@brightspace-ui-labs/statusicon)
-[![Dependabot badge](https://flat.badgen.net/dependabot/BrightspaceUILabs/statusicon?icon=dependabot)](https://app.dependabot.com/)
-[![Build status](https://travis-ci.com/@brightspace-ui-labs/statusicon.svg?branch=master)](https://travis-ci.com/@brightspace-ui-labs/statusicon)
+[![NPM version](https://img.shields.io/npm/v/@brightspace-ui-labs/status-icon.svg)](https://www.npmjs.org/package/@brightspace-ui-labs/status-icon)
+[![Build status](https://travis-ci.com/@brightspace-ui-labs/status-icon.svg?branch=master)](https://travis-ci.com/@brightspace-ui-labs/status-icon)
 
 > Note: this is a ["labs" component](https://github.com/BrightspaceUI/guide/wiki/Component-Tiers). While functional, these tasks are prerequisites to promotion to BrightspaceUI "official" status:
 >
@@ -25,35 +24,26 @@ Displays an icon as well as optional text to show the state/status of some featu
 To install from NPM:
 
 ```shell
-npm install @brightspace-ui-labs/statusicon
+npm install @brightspace-ui-labs/status-icon
 ```
 
 ## Usage
 
 ```html
 <script type="module">
-    import '@brightspace-ui-labs/statusicon/statusicon.js';
+    import '@brightspace-ui-labs/status-icon/status-icon.js';
 </script>
-<d2l-labs-statusicon id="test0" state="0" warningMessage="Warning" successMessage="Success" failureMessage="Failure"></d2l-labs-statusicon>
+<d2l-labs-status-icon state="failure" message="Failure"></d2l-labs-status-icon>
 ```
-![Status Icons preview](./StatusIconPreview.PNG)
 
+![Status Icons preview](./StatusIconPreview.PNG)
 
 **Properties:**
 
 | Property | Type | Description |
 |--|--|--|
-| warningMessage| string | the message to be displayed in state 2|
-| successMessage| string | the message to be displayed in state 1|
-| failureMessage| string | the message to be displayed in state 0|
-
-**Accessibility:**
-
-To make your usage of `d2l-labs-statusicon` accessible, use the following properties when applicable:
-
-| Attribute | Description |
-|--|--|
-| | |
+| `message` | String | Message to be displayed |
+| `state` | String, default: `'failure'` | State of the status. Can be one of  `failure`, `warning`, `success`. |
 
 ## Developing, Testing and Contributing
 
@@ -116,6 +106,10 @@ Golden snapshots in source control must be updated by Travis CI. To trigger an u
 
 ## Versioning, Releasing & Deploying
 
-All version changes should obey [semantic versioning](https://semver.org/) rules.
+Releases use the [semantic-release](https://semantic-release.gitbook.io/) tooling and the [angular preset](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-angular) for commit message syntax. All version changes should obey [semantic versioning](https://semver.org/) rules.
 
-Include either `[increment major]`, `[increment minor]` or `[increment patch]` in your merge commit message to automatically increment the `package.json` version and create a tag.
+Upon release, the version in `package.json` is updated, a tag and GitHub release is created and a new package will be deployed to NPM.
+
+Commits prefixed with `feat` will trigger a minor release, while `fix` or `perf` will trigger a patch release. A commit containing `BREAKING CHANGE:` in the _**message body**_ will cause a major release to occur.
+
+Other useful prefixes that will not trigger a release: `build`, `ci`, `docs`, `refactor`, `style` and `test`. More details in the [Angular Contribution Guidelines](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#type).
