@@ -1,6 +1,6 @@
-import { css, html, LitElement, svg } from 'lit-element/lit-element.js';
-import { unsafeSVG } from 'lit-html/directives/unsafe-svg';
+import { css, html, LitElement } from 'lit-element/lit-element.js';
 import { icons } from './icons.js';
+import { unsafeSVG } from 'lit-html/directives/unsafe-svg';
 
 class StatusIcon extends LitElement {
 
@@ -33,21 +33,19 @@ class StatusIcon extends LitElement {
 	}
 
 	render() {
-		if (this.state == 0) {
-			this.image = icons["failure"];
+		if (this.state === 0) {
+			this.image = icons['failure'];
 			this.message = this.failureMessage;
 			this.textColour = 'rgb(205, 32, 38)'; //cinnabar
-		} else if (this.state == 1) {
-			this.image = icons["success"];
+		} else if (this.state === 1) {
+			this.image = icons['success'];
 			this.message = this.successMessage;
 			this.textColour = '#46a661'; //olivine
 		} else {
-			this.image = icons["warning"];
+			this.image = icons['warning'];
 			this.message = this.warningMessage;
 			this.textColour = 'rgb(255, 186, 89)'; //citrine
 		}
-		console.log(this.image);
-
 
 		return html`
 			<div>
