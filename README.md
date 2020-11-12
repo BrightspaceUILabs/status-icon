@@ -1,7 +1,7 @@
 # d2l-labs-status-icon
 
 [![NPM version](https://img.shields.io/npm/v/@brightspace-ui-labs/status-icon.svg)](https://www.npmjs.org/package/@brightspace-ui-labs/status-icon)
-[![Build status](https://travis-ci.com/@brightspace-ui-labs/status-icon.svg?branch=master)](https://travis-ci.com/@brightspace-ui-labs/status-icon)
+[![Build status](https://travis-ci.com/brightspaceuilabs/status-icon.svg?branch=master)](https://travis-ci.com/@brightspace-ui-labs/status-icon)
 
 > Note: this is a ["labs" component](https://github.com/BrightspaceUI/guide/wiki/Component-Tiers). While functional, these tasks are prerequisites to promotion to BrightspaceUI "official" status:
 >
