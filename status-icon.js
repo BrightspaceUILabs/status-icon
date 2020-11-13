@@ -20,9 +20,11 @@ function getMessage(state, success, failure, warning) {
 	switch (state) {
 		case 'success':
 		case '1':
+		case 1:
 			return success;
 		case 'warning':
 		case '2':
+		case 2:
 			return warning;
 		default:
 			return failure;
@@ -53,12 +55,12 @@ class StatusIcon extends RtlMixin(LitElement) {
 			d2l-icon {
 				color: var(--d2l-color-cinnabar);
 			}
-			:host([state="warning"]),
-			:host([state="warning"]) d2l-icon {
+			:host([state="warning"],[state="2"]),
+			:host([state="warning"],[state="2"]) d2l-icon {
 				color: var(--d2l-color-citrine);
 			}
-			:host([state="success"]),
-			:host([state="success"]) d2l-icon {
+			:host([state="success"],[state="1"]),
+			:host([state="success"],[state="1"]) d2l-icon {
 				color: var(--d2l-color-olivine);
 			}
 			span {

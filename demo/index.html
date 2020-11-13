@@ -18,17 +18,31 @@
 		0 = failure,
 		1 = success,
 		2 = warning
+		<h2>Intended use</h2>
+		<d2l-demo-snippet>
+			<d2l-labs-status-icon id="test" state=1 warningMessage="Warning" successMessage="Success" failureMessage="Failure"></d2l-labs-status-icon>
+		</d2l-demo-snippet>
+		<button id="stateButton" type="button">Change State</button>
+		<script>
+			function changeState() {
+				document.getElementById('test').state++;
+				if (document.getElementById('test').state > 2) {
+					document.getElementById('test').state = 0;
+				}
+			}
+			document.getElementById('stateButton').onclick = function() { changeState(); };
+		</script>
 		<h2>Failure</h2>
 		<d2l-demo-snippet>
 			<d2l-labs-status-icon id="test0" state="failure" failureMessage="Failure"></d2l-labs-status-icon>
 		</d2l-demo-snippet>
 		<h2>Warning</h2>
 		<d2l-demo-snippet>
-			<d2l-labs-status-icon id="test1" state="warning" warningMessage="Warning" successMessage="Success" failureMessage="Failure"></d2l-labs-status-icon>
+			<d2l-labs-status-icon id="test1" state="warning" warningMessage="Warning"></d2l-labs-status-icon>
 		</d2l-demo-snippet>
 		<h2>Success</h2>
 		<d2l-demo-snippet>
-			<d2l-labs-status-icon id="test2" state="success" warningMessage="Warning" successMessage="Success" failureMessage="Failure"></d2l-labs-status-icon>
+			<d2l-labs-status-icon id="test2" state="success" successMessage="Success"></d2l-labs-status-icon>
 		</d2l-demo-snippet>
 	</d2l-demo-page>
 </body>
