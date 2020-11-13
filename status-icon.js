@@ -6,11 +6,26 @@ import { RtlMixin } from '@brightspace-ui/core/mixins/rtl-mixin.js';
 function getIcon(state) {
 	switch (state) {
 		case 'success':
+		case '1':
 			return 'tier1:check-circle';
 		case 'warning':
+		case '2':
 			return 'tier1:alert';
 		default:
 			return 'tier1:close-circle';
+	}
+}
+
+function getMessage(state, success, failure, warning) {
+	switch (state) {
+		case 'success':
+		case '1':
+			return success;
+		case 'warning':
+		case '2':
+			return warning;
+		default:
+			return failure;
 	}
 }
 
@@ -19,7 +34,9 @@ class StatusIcon extends RtlMixin(LitElement) {
 	static get properties() {
 		return {
 			state: { type: String, reflect: true },
-			message: { type: String, reflect: true }
+			successMessage: { type: String, reflect: true },
+			failureMessage: { type: String, reflect: true },
+			warningMessage: { type: String, reflect: true }
 		};
 	}
 
@@ -60,10 +77,14 @@ class StatusIcon extends RtlMixin(LitElement) {
 	}
 
 	render() {
+		console.log(this.successMessage);
+		console.log(this.warningMessage);
+		console.log(this.failureMessage);
 		const icon = getIcon(this.state);
+		const message = getMessage(this.state, this.successMessage, this.failureMessage, this.warningMessage);
 		return html`
 			<d2l-icon icon="${icon}"></d2l-icon>
-			<span>${this.message} </span>
+			<span>${message} </span>
 		`;
 	}
 
