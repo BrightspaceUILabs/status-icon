@@ -7,9 +7,11 @@ function getIcon(state) {
 	switch (state) {
 		case 'success':
 		case '1':
+		case 1:
 			return 'tier1:check-circle';
 		case 'warning':
 		case '2':
+		case 2:
 			return 'tier1:alert';
 		default:
 			return 'tier1:close-circle';
@@ -61,7 +63,7 @@ class StatusIcon extends RtlMixin(LitElement) {
 			}
 			:host([state="success"],[state="1"]),
 			:host([state="success"],[state="1"]) d2l-icon {
-				color: var(--d2l-color-olivine);
+				color: var(--d2l-color-olivine-minus-2);
 			}
 			span {
 				margin-left: 0.4em;
