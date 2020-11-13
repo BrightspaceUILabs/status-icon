@@ -87,8 +87,10 @@ class StatusIcon extends RtlMixin(LitElement) {
 		const icon = getIcon(this.state);
 		const message = getMessage(this.state, this.successMessage, this.failureMessage, this.warningMessage);
 		return html`
-			<d2l-icon icon="${icon}"></d2l-icon>
-			<span>${message} </span>
+			<div>
+				<d2l-icon icon="${icon}"></d2l-icon>
+				<span style="vertical-align: middle" >${message} </span>
+			</div>
 		`;
 	}
 
