@@ -81,9 +81,6 @@ class StatusIcon extends RtlMixin(LitElement) {
 	}
 
 	render() {
-		console.log(this.successMessage);
-		console.log(this.warningMessage);
-		console.log(this.failureMessage);
 		const icon = getIcon(this.state);
 		const message = getMessage(this.state, this.successMessage, this.failureMessage, this.warningMessage);
 		return html`
