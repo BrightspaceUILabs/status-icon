@@ -14,7 +14,6 @@ function getIcon(state, mode) {
 				default:
 					return 'tier1:alert';
 			}
-			return;
 		case 1: //multi state
 			switch (state) {
 				case 'success':
@@ -28,9 +27,9 @@ function getIcon(state, mode) {
 				default:
 					return 'tier1:close-circle';
 			}
-			return;
+		default:
+			return 'tier1:close-circle';
 	}
-	
 }
 
 function getMessage(state, mode, success, failure, warning) {
@@ -44,7 +43,6 @@ function getMessage(state, mode, success, failure, warning) {
 				default:
 					return failure;
 			}
-			return;
 		case 1:
 			switch (state) {
 				case 'success':
@@ -58,7 +56,6 @@ function getMessage(state, mode, success, failure, warning) {
 				default:
 					return failure;
 			}
-			return;
 	}
 }
 
@@ -67,7 +64,7 @@ class StatusIcon extends RtlMixin(LitElement) {
 	static get properties() {
 		return {
 			state: { type: String, reflect: true },
-			mode: { type: Number, reflect: true , attribute: 'mode'},
+			mode: { type: Number, reflect: true, attribute: 'mode' },
 			successMessage: { type: String, reflect: true, attribute: 'success-message' },
 			failureMessage: { type: String, reflect: true, attribute: 'failure-message' },
 			warningMessage: { type: String, reflect: true, attribute: 'warning-message' }
