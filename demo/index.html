@@ -15,34 +15,51 @@
 <body>
 	<d2l-demo-page page-title="d2l-labs-status-icon">
 		By getting the element by ID ('test#' in this case), the component can be updated by changing the state.
-		0 = failure,
-		1 = success,
+		<hr />
+		Mode 0 - is default, and has only a success and failure image<br />
+		0 = failure,<br />
+		1 = success
+		<d2l-demo-snippet>
+			<d2l-labs-status-icon id="test0" mode="0" state="1" success-message="Success" failure-message="Failure"></d2l-labs-status-icon>
+		</d2l-demo-snippet>
+		<button id="stateButton1" type="button">Change State</button>
+		<script>
+			function changeState1() {
+				if (document.getElementById('test0').state == '1') {
+					document.getElementById('test0').state = '0';
+				} else {
+					document.getElementById('test0').state = '1';
+				}
+			}
+			document.getElementById('stateButton1').onclick = function () { changeState1(); };
+		</script>
+
+
+		<hr />
+		Mode 1 - is a 3 state of success, failure and warning<br />
+		0 = failure,<br />
+		1 = success,<br />
 		2 = warning
 		<h2>Intended use</h2>
 		<d2l-demo-snippet>
-			<d2l-labs-status-icon id="test" state="1" warning-message="Warning" success-message="Success" failure-message="Failure"></d2l-labs-status-icon>
+			<d2l-labs-status-icon id="test1" mode="1" state="1" warning-message="Warning" success-message="Success" failure-message="Failure"></d2l-labs-status-icon>
 		</d2l-demo-snippet>
-		<button id="stateButton" type="button">Change State</button>
+		<button id="stateButton2" type="button">Change State</button>
 		<script>
-			function changeState() {
-				document.getElementById('test').state++;
-				if (document.getElementById('test').state > 2) {
-					document.getElementById('test').state = '0';
+			function changeState2() {
+				document.getElementById('test1').state++;
+				if (document.getElementById('test1').state > 2) {
+					document.getElementById('test1').state = '0';
 				}
 			}
-			document.getElementById('stateButton').onclick = function() { changeState(); };
+			document.getElementById('stateButton2').onclick = function () { changeState2(); };
 		</script>
-		<h2>Failure</h2>
+		<br />
+		<br />
 		<d2l-demo-snippet>
-			<d2l-labs-status-icon id="test0" state="failure" failure-message="Failure"></d2l-labs-status-icon>
-		</d2l-demo-snippet>
-		<h2>Warning</h2>
-		<d2l-demo-snippet>
-			<d2l-labs-status-icon id="test1" state="warning" warning-message="Warning"></d2l-labs-status-icon>
-		</d2l-demo-snippet>
-		<h2>Success</h2>
-		<d2l-demo-snippet>
-			<d2l-labs-status-icon id="test2" state="success" success-message="Success"></d2l-labs-status-icon>
+			<d2l-labs-status-icon id="test0" mode="1" state="failure" failure-message="Failure"></d2l-labs-status-icon>
+			<d2l-labs-status-icon id="test1" mode="1" state="warning" warning-message="Warning"></d2l-labs-status-icon>
+			<d2l-labs-status-icon id="test2" mode="1" state="success" success-message="Success"></d2l-labs-status-icon>
 		</d2l-demo-snippet>
 	</d2l-demo-page>
 </body>

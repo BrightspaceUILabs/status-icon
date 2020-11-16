@@ -3,33 +3,62 @@ import '@brightspace-ui/core/components/icons/icon.js';
 import { css, html, LitElement } from 'lit-element/lit-element.js';
 import { RtlMixin } from '@brightspace-ui/core/mixins/rtl-mixin.js';
 
-function getIcon(state) {
-	switch (state) {
-		case 'success':
-		case '1':
-		case 1:
-			return 'tier1:check-circle';
-		case 'warning':
-		case '2':
-		case 2:
-			return 'tier1:alert';
-		default:
-			return 'tier1:close-circle';
+function getIcon(state, mode) {
+	switch (mode) {
+		case 0:// success or fail state
+			switch (state) {
+				case 'success':
+				case '1':
+				case 1:
+					return 'tier1:check-circle';
+				default:
+					return 'tier1:alert';
+			}
+			return;
+		case 1: //multi state
+			switch (state) {
+				case 'success':
+				case '1':
+				case 1:
+					return 'tier1:check-circle';
+				case 'warning':
+				case '2':
+				case 2:
+					return 'tier1:alert';
+				default:
+					return 'tier1:close-circle';
+			}
+			return;
 	}
+	
 }
 
-function getMessage(state, success, failure, warning) {
-	switch (state) {
-		case 'success':
-		case '1':
+function getMessage(state, mode, success, failure, warning) {
+	switch (mode) {
+		case 0:
+			switch (state) {
+				case 'success':
+				case '1':
+				case 1:
+					return success;
+				default:
+					return failure;
+			}
+			return;
 		case 1:
-			return success;
-		case 'warning':
-		case '2':
-		case 2:
-			return warning;
-		default:
-			return failure;
+			switch (state) {
+				case 'success':
+				case '1':
+				case 1:
+					return success;
+				case 'warning':
+				case '2':
+				case 2:
+					return warning;
+				default:
+					return failure;
+			}
+			return;
 	}
 }
 
@@ -38,6 +67,7 @@ class StatusIcon extends RtlMixin(LitElement) {
 	static get properties() {
 		return {
 			state: { type: String, reflect: true },
+			mode: { type: Number, reflect: true , attribute: 'mode'},
 			successMessage: { type: String, reflect: true, attribute: 'success-message' },
 			failureMessage: { type: String, reflect: true, attribute: 'failure-message' },
 			warningMessage: { type: String, reflect: true, attribute: 'warning-message' }
@@ -78,11 +108,12 @@ class StatusIcon extends RtlMixin(LitElement) {
 	constructor() {
 		super();
 		this.state = 'failure';
+		this.mode = 0;
 	}
 
 	render() {
-		const icon = getIcon(this.state);
-		const message = getMessage(this.state, this.successMessage, this.failureMessage, this.warningMessage);
+		const icon = getIcon(this.state, this.mode);
+		const message = getMessage(this.state, this.mode, this.successMessage, this.failureMessage, this.warningMessage);
 		return html`
 			<div>
 				<d2l-icon icon="${icon}"></d2l-icon>
