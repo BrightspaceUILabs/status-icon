@@ -33,7 +33,7 @@ npm install @brightspace-ui-labs/status-icon
 <script type="module">
     import '@brightspace-ui-labs/status-icon/status-icon.js';
 </script>
-<d2l-labs-statusicon id="test0" state="0" warningMessage="Warning" successMessage="Success" failureMessage="Failure"></d2l-labs-statusicon>
+<d2l-labs-statusicon id="test0" state="0" warning-message="Warning" success-message="Success" failure-message="Failure"></d2l-labs-statusicon>
 ```
 
 ![Status Icons preview](./StatusIconPreview.PNG)
@@ -42,9 +42,9 @@ npm install @brightspace-ui-labs/status-icon
 
 | Property | Type | Description |
 |--|--|--|
-| warningMessage| string | the message to be displayed in state 2 or warning|
-| successMessage| string | the message to be displayed in state 1 or success|
-| failureMessage| string | the message to be displayed in state 0 or failure as well as it is default|
+| warning-message| string | the message to be displayed in state 2 or warning|
+| success-message| string | the message to be displayed in state 1 or success|
+| failure-message| string | the message to be displayed in state 0 or failure as well as it is default|
 
 
 ## Developing, Testing and Contributing
