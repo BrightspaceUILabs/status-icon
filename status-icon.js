@@ -84,12 +84,16 @@ class StatusIcon extends RtlMixin(LitElement) {
 			d2l-icon {
 				color: var(--d2l-color-cinnabar);
 			}
-			:host([state="warning"],[state="2"]),
-			:host([state="warning"],[state="2"]) d2l-icon {
+			:host([state="warning"]),
+			:host([state="2"]),
+			:host([state="warning"]) d2l-icon,
+			:host([state="2"]) d2l-icon {
 				color: var(--d2l-color-citrine);
 			}
-			:host([state="success"],[state="1"]),
-			:host([state="success"],[state="1"]) d2l-icon {
+			:host([state="success"]),
+			:host([state="1"]),
+			:host([state="success"]) d2l-icon,
+			:host([state="1"]) d2l-icon {
 				color: var(--d2l-color-olivine-minus-2);
 			}
 			span {
