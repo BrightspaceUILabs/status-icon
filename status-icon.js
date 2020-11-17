@@ -63,7 +63,7 @@ class StatusIcon extends RtlMixin(LitElement) {
 
 	static get properties() {
 		return {
-			state: { type: String, reflect: true },
+			state: { type: String, reflect: true, attribute: 'state' },
 			mode: { type: Number, reflect: true, attribute: 'mode' },
 			successMessage: { type: String, reflect: true, attribute: 'success-message' },
 			failureMessage: { type: String, reflect: true, attribute: 'failure-message' },
