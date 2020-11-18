@@ -88,7 +88,7 @@ class StatusIcon extends RtlMixin(LitElement) {
 			:host([state="2"]),
 			:host([state="warning"]) d2l-icon,
 			:host([state="2"]) d2l-icon {
-				color: var(--d2l-color-citrine);
+				color: var(--d2l-color-carnelian);
 			}
 			:host([state="success"]),
 			:host([state="1"]),
