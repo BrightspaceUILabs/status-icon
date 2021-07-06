@@ -32,17 +32,33 @@ npm install @brightspace-ui-labs/status-icon
 <script type="module">
     import '@brightspace-ui-labs/status-icon/status-icon.js';
 </script>
-<d2l-labs-status-icon state="failure" message="Failure"></d2l-labs-status-icon>
+<d2l-labs-statusicon id="test0" state="0" warning-message="Warning" success-message="Success" failure-message="Failure"></d2l-labs-statusicon>
 ```
-
-![Status Icons preview](./StatusIconPreview.PNG)
 
 **Properties:**
 
 | Property | Type | Description |
 |--|--|--|
-| `message` | String | Message to be displayed |
-| `state` | String, default: `'failure'` | State of the status. Can be one of  `failure`, `warning`, `success`. |
+| mode | number | the mode of the component (different sets of states available)|
+
+### Mode 0 (default)
+| Property | Type | Description |
+|--|--|--|
+| state | string/number | the state of the component 'failure' = 0, 'success' = 1|
+| success-message| string | the message to be displayed in state 1 or success|
+| failure-message| string | the message to be displayed in state 0 or failure as well as it is default|
+
+![Status Icons mode 0](./Mode0Icons.PNG)
+
+### Mode 1
+| Property | Type | Description |
+|--|--|--|
+| state | string/number | the state of the component 'failure' = 0, 'success' = 1', warning' = 2|
+| warning-message| string | the message to be displayed in state 2 or warning|
+| success-message| string | the message to be displayed in state 1 or success|
+| failure-message| string | the message to be displayed in state 0 or failure as well as it is default|
+
+![Status Icons mode 1](./Mode1Icons.PNG)
 
 ## Developing, Testing and Contributing
 

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<script type="module">
@@ -22,13 +22,19 @@
 	</head>
 	<body class="d2l-typography">
 		<div class="visual-diff">
-			<d2l-labs-status-icon state="failure" message="Failure"></d2l-labs-status-icon>
+			<d2l-labs-status-icon mode="1" state="failure" failure-message="Failure"></d2l-labs-status-icon>
 		</div>
 		<div class="visual-diff">
-			<d2l-labs-status-icon state="warning" message="Warning"></d2l-labs-status-icon>
+			<d2l-labs-status-icon mode="1" state="warning" warning-message="Warning"></d2l-labs-status-icon>
 		</div>
 		<div class="visual-diff">
-			<d2l-labs-status-icon state="success" message="Success"></d2l-labs-status-icon>
+			<d2l-labs-status-icon mode="1" state="success" success-message="Success"></d2l-labs-status-icon>
+		</div>
+		<div class="visual-diff">
+			<d2l-labs-status-icon state="0" failure-message="Failure"></d2l-labs-status-icon>
+		</div>
+		<div class="visual-diff">
+			<d2l-labs-status-icon state="1" success-message="Success"></d2l-labs-status-icon>
 		</div>
 	</body>
 </html>
