@@ -1,6 +1,6 @@
 {
   "name": "@brightspace-ui-labs/status-icon",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Displays an icon as well as optional text to show the state/status of some feature or tool",
   "type": "module",
   "repository": "https://github.com/BrightspaceUILabs/status-icon.git",
