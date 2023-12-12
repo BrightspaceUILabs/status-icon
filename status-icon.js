@@ -1,6 +1,6 @@
 import '@brightspace-ui/core/components/colors/colors.js';
 import '@brightspace-ui/core/components/icons/icon.js';
-import { css, html, LitElement } from 'lit-element/lit-element.js';
+import { css, html, LitElement } from 'lit';
 import { RtlMixin } from '@brightspace-ui/core/mixins/rtl-mixin.js';
 
 function getIcon(state) {
