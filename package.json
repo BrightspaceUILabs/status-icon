@@ -8,9 +8,8 @@
     "access": "public"
   },
   "scripts": {
-    "lint": "npm run lint:eslint && npm run lint:lit",
+    "lint": "npm run lint:eslint",
     "lint:eslint": "eslint . --ext .js,.html",
-    "lint:lit": "lit-analyzer status-icon.js demo test",
     "start": "web-dev-server --app-index demo/index.html --node-resolve --open --watch",
     "test": "npm run lint && npm run test:unit",
     "test:unit": "d2l-test-runner",
@@ -24,18 +23,10 @@
   "license": "Apache-2.0",
   "devDependencies": {
     "@babel/core": "^7",
-    "@babel/eslint-parser": "^7",
     "@brightspace-ui/testing": "^1",
-    "@open-wc/testing": "^3",
-    "@web/dev-server": "^0.1",
-    "@web/test-runner": "^0.13",
-    "eslint": "^7",
-    "eslint-config-brightspace": "^0.16",
-    "eslint-plugin-html": "^6",
-    "eslint-plugin-import": "^2",
-    "eslint-plugin-lit": "^1",
-    "eslint-plugin-sort-class-members": "^1",
-    "lit-analyzer": "^1"
+    "@web/dev-server": "^0.4",
+    "eslint": "^8",
+    "eslint-config-brightspace": "^1"
   },
   "dependencies": {
     "@brightspace-ui/core": "^3",
