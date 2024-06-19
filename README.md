@@ -44,49 +44,30 @@ npm install @brightspace-ui-labs/status-icon
 | `message` | String | Message to be displayed |
 | `state` | String, default: `'failure'` | State of the status. Can be one of  `failure`, `warning`, `success`. |
 
-## Developing, Testing and Contributing
+## Developing and Contributing
 
 After cloning the repo, run `npm install` to install dependencies.
 
-### Running the demos
-
-To start a [@web/dev-server](https://modern-web.dev/docs/dev-server/overview/) that hosts the demo page and tests:
-
-```shell
-npm start
-```
-
-### Linting
-
-```shell
-# eslint and lit-analyzer
-npm run lint
-
-# eslint only
-npm run lint:eslint
-
-# lit-analyzer only
-npm run lint:lit
-```
-
 ### Testing
 
+To run the full suite of tests:
+
 ```shell
-# lint, unit test and visual-diff test
 npm test
-
-# lint only
-npm run lint
-
-# unit tests only
-npm run test:unit
-
-# debug or run a subset of local unit tests
-# then use the debugger controls provided in the terminal
-npm run test:unit:watch
 ```
 
-### Visual Diff Testing
+Alternatively, tests can be selectively run:
+
+```shell
+# eslint
+npm run lint:eslint
+
+# stylelint
+npm run lint:style
+
+# unit tests
+npm run test:unit
+```
 
 This repo uses [@brightspace-ui/testing](https://github.com/BrightspaceUI/testing)'s vdiff command to perform visual regression testing:
 
@@ -96,6 +77,14 @@ npm run test:vdiff
 
 # re-generate goldens
 npm run test:vdiff golden
+```
+
+### Running the demos
+
+To start a [@web/dev-server](https://modern-web.dev/docs/dev-server/overview/) that hosts the demo page and tests:
+
+```shell
+npm start
 ```
 
 ### Versioning and Releasing
