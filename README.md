@@ -44,9 +44,40 @@ npm install @brightspace-ui-labs/status-icon
 | `message` | String | Message to be displayed |
 | `state` | String, default: `'failure'` | State of the status. Can be one of  `failure`, `warning`, `success`. |
 
-## Developing, Testing and Contributing
+## Developing and Contributing
 
 After cloning the repo, run `npm install` to install dependencies.
+
+### Testing
+
+To run the full suite of tests:
+
+```shell
+npm test
+```
+
+Alternatively, tests can be selectively run:
+
+```shell
+# eslint
+npm run lint:eslint
+
+# stylelint
+npm run lint:style
+
+# unit tests
+npm run test:unit
+```
+
+This repo uses [@brightspace-ui/testing](https://github.com/BrightspaceUI/testing)'s vdiff command to perform visual regression testing:
+
+```shell
+# vdiff
+npm run test:vdiff
+
+# re-generate goldens
+npm run test:vdiff golden
+```
 
 ### Running the demos
 
@@ -54,61 +85,6 @@ To start a [@web/dev-server](https://modern-web.dev/docs/dev-server/overview/) t
 
 ```shell
 npm start
-```
-
-### Linting
-
-```shell
-# eslint and lit-analyzer
-npm run lint
-
-# eslint only
-npm run lint:eslint
-
-# lit-analyzer only
-npm run lint:lit
-```
-
-### Testing
-
-```shell
-# lint, unit test and visual-diff test
-npm test
-
-# lint only
-npm run lint
-
-# unit tests only
-npm run test:headless
-
-# debug or run a subset of local unit tests
-# then navigate to `http://localhost:9876/debug.html`
-npm run test:headless:watch
-```
-
-### Visual Diff Testing
-
-This repo uses the [@brightspace-ui/visual-diff utility](https://github.com/BrightspaceUI/visual-diff/) to compare current snapshots against a set of golden snapshots stored in source control.
-
-The golden snapshots in source control must be updated by the [visual-diff GitHub Action](https://github.com/BrightspaceUI/actions/tree/main/visual-diff).  If a pull request results in visual differences, a draft pull request with the new goldens will automatically be opened against its branch.
-
-To run the tests locally to help troubleshoot or develop new tests, first install these dependencies:
-
-```shell
-npm install @brightspace-ui/visual-diff@X mocha@Y puppeteer@Z  --no-save
-```
-
-Replace `X`, `Y` and `Z` with [the current versions](https://github.com/BrightspaceUI/actions/tree/main/visual-diff#current-dependency-versions) the action is using.
-
-Then run the tests:
-
-```shell
-# run visual-diff tests
-npx mocha './test/**/*.visual-diff.js' -t 10000
-# subset of visual-diff tests:
-npx mocha './test/**/*.visual-diff.js' -t 10000 -g some-pattern
-# update visual-diff goldens
-npx mocha './test/**/*.visual-diff.js' -t 10000 --golden
 ```
 
 ### Versioning and Releasing
