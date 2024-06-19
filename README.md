@@ -79,11 +79,11 @@ npm test
 npm run lint
 
 # unit tests only
-npm run test:headless
+npm run test:unit
 
 # debug or run a subset of local unit tests
-# then navigate to `http://localhost:9876/debug.html`
-npm run test:headless:watch
+# then use the debugger controls provided in the terminal
+npm run test:unit:watch
 ```
 
 ### Visual Diff Testing

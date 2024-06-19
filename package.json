@@ -12,9 +12,9 @@
     "lint:eslint": "eslint . --ext .js,.html",
     "lint:lit": "lit-analyzer status-icon.js demo test",
     "start": "web-dev-server --app-index demo/index.html --node-resolve --open --watch",
-    "test": "npm run lint && npm run test:headless",
-    "test:headless": "web-test-runner",
-    "test:headless:watch": "web-test-runner --watch"
+    "test": "npm run lint && npm run test:unit",
+    "test:unit": "d2l-test-runner",
+    "test:unit:watch": "d2l-test-runner --watch"
   },
   "author": "D2L Corporation",
   "files": [
@@ -24,6 +24,7 @@
   "devDependencies": {
     "@babel/core": "^7",
     "@babel/eslint-parser": "^7",
+    "@brightspace-ui/testing": "^1.16.1",
     "@open-wc/testing": "^3",
     "@web/dev-server": "^0.1",
     "@web/test-runner": "^0.13",
