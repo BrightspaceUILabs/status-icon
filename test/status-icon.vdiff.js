@@ -1,5 +1,5 @@
-import { expect, fixture, html } from '@brightspace-ui/testing';
 import '../status-icon.js';
+import { expect, fixture, html } from '@brightspace-ui/testing';
 
 describe('d2l-labs-status-icon', () => {
 
